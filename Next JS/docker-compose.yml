@@ -1,0 +1,16 @@
+services:
+  db:
+    image: "postgres:latest"
+    container_name: asim-test
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=next_app_user
+      - POSTGRES_PASSWORD=click123
+      - POSTGRES_DB=next_db
+    volumes:
+      - "next_app:/var/lib/postgresql"
+    restart: always
+volumes:
+  next_app:
+    external: true
