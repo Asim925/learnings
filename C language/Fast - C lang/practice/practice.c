@@ -146,3 +146,32 @@
 // }
 
 // =========== DIAMOND ============= //
+
+#include <stdio.h>
+int main()
+{
+    int rows = 5;
+    int spaces = rows / 2;
+    int stars = 1;
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int element = 1; element <= spaces + stars; element++)
+        {
+            if (spaces >= element)
+                printf("  ");
+            else
+                printf("* ");
+        }
+        if (i <= (rows / 2))
+        {
+            spaces--;
+            stars += 2;
+        }
+        else
+        {
+            spaces++;
+            stars -= 2;
+        }
+        printf("\n");
+    }
+}
