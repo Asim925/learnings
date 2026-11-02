@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/asim/Downloads/26k-0540 M. Asim Nazeer",
+      "program": "/Users/asim/Downloads/26k-0540 M. Asim Nazeer/build/Debug/outDebug"
+    }
+  ]
+}
