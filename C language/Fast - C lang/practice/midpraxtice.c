@@ -103,14 +103,7 @@
 #include <stdio.h>
 int main()
 {
-    int n = 5;
-    for (int i = 1; i <= n; i++)
-    {
-        printf("row %d: ", i);
-        int spaces = 0;
-        int letters = n;
-        for (int j = 97; j <= 97 + n; j++)
-        {
-        }
-    }
+    char s[10];
+    gets(s);
+    printf("%s", s);
 }
