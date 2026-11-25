@@ -92,13 +92,18 @@ int main()
         structures can be defined globally or locally
         they are userdefined datatypes
     */
-    struct Date
-    {
-        int d, m, y; // date month and year
-    } d1, d2, d3;    // idhar bhi define kr sakte hain.
+    // struct Date
+    // {
+    //     int d, m, y; // date month and year
+    // } d1, d2, d3;    // idhar bhi define kr sakte hain.
+    // struct Date today = {24, 11, 2026}; // struct keyword is necesary before defining a variable with sturctures.
+    // printf("%d", today.d);
+    // d1 = today; // directly assigning same values of today in d1
 
-    struct Date today = {24, 11, 2026}; // struct keyword is necesary before defining a variable with sturctures.
-    printf("%d", today.d);
-
-    d1 = today; // directly assigning same values of today in d1
+    //  ========================== union vs structure ===============================
+    /*
+        exact same syntax
+        in structures, the size is of all the datatypes used. like {int, float, char}, size is int + float + char
+        in union, the size is only of the max size datatype. like {int, float, char}, size is float or int (since both are 4) {any one thing will be stored.}
+    */
 }
