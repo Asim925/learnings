@@ -76,14 +76,29 @@ int main()
     */
 
     // storing values in array by pointers.
-    int arr[5];
-    int *p = arr; // "arr" and '&arr[0]' both are same
-    for (int i = 0; i < 5; i++)
+    // int arr[5];
+    // int *p = arr; // "arr" and '&arr[0]' both are same
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     scanf("%d", p + i); // direct p + i because we will pass the address in the function scanf to update the garbage value to the input value
+    // }
+    // for (int i = 0; i < 5; i++)
+    // {
+    //     printf("%d", *(p + i));
+    // }
+
+    //  ========================== structures ===============================
+    /*
+        structures can be defined globally or locally
+        they are userdefined datatypes
+    */
+    struct Date
     {
-        scanf("%d", p + i); // direct p + i because we will pass the address in the function scanf to update the garbage value to the input value
-    }
-    for (int i = 0; i < 5; i++)
-    {
-        printf("%d", *(p + i));
-    }
+        int d, m, y; // date month and year
+    } d1, d2, d3;    // idhar bhi define kr sakte hain.
+
+    struct Date today = {24, 11, 2026}; // struct keyword is necesary before defining a variable with sturctures.
+    printf("%d", today.d);
+
+    d1 = today; // directly assigning same values of today in d1
 }

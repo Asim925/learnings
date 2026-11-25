@@ -2,11 +2,10 @@
 
 int calcLength(char *p)
 {
-    int l = 0;
-    for (int i = 0; *(p + i) == '\0'; i++)
-        l++;
-
-    return l;
+    int i;
+    for (i = 0; *(p + i) == '\0'; i++)
+        ;
+    return i;
 }
 int main()
 {
