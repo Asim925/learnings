@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 int main()
 {
     /* escape sequence:
@@ -106,4 +107,37 @@ int main()
         in structures, the size is of all the datatypes used. like {int, float, char}, size is int + float + char
         in union, the size is only of the max size datatype. like {int, float, char}, size is float or int (since both are 4) {any one thing will be stored.}
     */
+
+    //  ========================== malloc function : malloc(total size) ===============================
+    /*
+         malloc has one parameter: the total size
+         malloc gives void pointer. so we do typecasting to tell the compiler that return type of malloc function will be specific type
+         by default the memory created has the garbage value
+    */
+    int *p1 = malloc(20); // runtime pr memory creation of size 20 bytes.
+    int *p2 = (int *)malloc(40);
+
+    // although in C typecasting is not required as generic pointers(void) are directly converted into the specific datatype
+
+    //  ========================== calloc function : calloc(count, size) ===============================
+    /*
+        calloc has 2 parameters, the size of datatype and no of blocks to create
+        by default the memory created has 0 not garbage values
+    */
+    int *p3 = calloc(5, sizeof(int));
+
+    //  ========================== reaclloc function : realloc(reference, new_size) ===============================
+    p3 = realloc(p3, 10 * sizeof(int));
+
+    //  ========================== free function : free(reference) ===============================
+    // free() marks the heap block as reusable by the allocator (if i do not free it, it leaks memory).
+    // p3 still holds the old address until we set it to NULL, so we clear it to avoid a dangling pointer.
+    free(p3);
+    p3 = NULL; // clear pointer so we don't accidentally use freed memory
+
+    //  ==========================  null pointer  ===============================
+    // suppose the memory is not created due to any issue so the. pointer is null. so for safeside... we test it always
+
+    if (p3 == NULL)
+        return 0;
 }
